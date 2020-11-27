@@ -17,6 +17,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 
+  <!-- 修正輪播牆圖片顯示問題 start -->
+  <script type="text/javascript" src="/static/plugins/thumb/js/jqthumb.js"></script>
+  <script>
+    function DrawImage(hotimg) {
+      $(hotimg).jqthumb({
+        classname: 'jqthumb',
+        width: '100%',
+        height: '300px',
+        position: { y: '50%', x: '50%' },
+        zoom: '1',
+        method: 'auto',
+      });
+    }
+  </script>
+  <!-- 修正輪播牆圖片顯示問題 end -->
+
+
   <style>
     /* div {
               border: 1px solid red;
@@ -723,16 +740,16 @@
     </div>
 
     <div class="row hero-area">
-      <div id="carouselExampleControls" class="carousel-slide slide" data-ride="carousel">
+      <div id="carouselExampleControls" class="carousel-slide carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="images/1_index/02.jpg" class="d-block w-100" alt="..." />
+            <img src="images/1_index/02.jpg" class="d-block w-100" alt="..." onload="DrawImage(this)" />
           </div>
           <div class="carousel-item">
-            <img src="images/1_index/03.jpg" class="d-block w-100" alt="..." />
+            <img src="images/1_index/03.jpg" class="d-block w-100" alt="..." onload="DrawImage(this)" />
           </div>
           <div class="carousel-item">
-            <img src="images/1_index/04.jpg" class="d-block w-100" alt="..." />
+            <img src="images/1_index/04.jpg" class="d-block w-100" alt="..." onload="DrawImage(this)" />
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
