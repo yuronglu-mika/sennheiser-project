@@ -852,55 +852,7 @@
         }
       });
 
-      $(".carousel-control-prev").on("click", function () {
-        console.log("hi");
-        $(".carousel-item").each(function (index) {
-          if ($(this).hasClass("active")) {
-            $(this).addClass("carousel-item-right");
-            $(".carousel-item")
-              .eq(index - 1)
-              .addClass("carousel-item-prev carousel-item-right");
-
-            // $(this).removeClass("carousel-item-right");
-          }
-
-          $(this).one(
-            "transitionend webkitTransitionEnd oTransitionEnd",
-            function () {
-              $(this).removeClass("carousel-item-right").removeClass("active");
-              $(".carousel-item")
-                .eq(index - 1)
-                .removeClass("carousel-item-prev carousel-item-right")
-                .addClass("active");
-            }
-          );
-        });
-      });
-
-      $(".carousel-control-next").on("click", function () {
-        console.log("hi next");
-        $(".carousel-item").each(function (index) {
-          if ($(this).hasClass("active")) {
-            $(this).addClass("carousel-item-left");
-            $(".carousel-item")
-              .eq(index + 1)
-              .addClass("carousel-item-next carousel-item-left");
-
-            // $(this).removeClass("carousel-item-right");
-          }
-
-          $(this).one(
-            "transitionend webkitTransitionEnd oTransitionEnd",
-            function () {
-              $(this).removeClass("carousel-item-left").removeClass("active");
-              $(".carousel-item")
-                .eq(index + 1)
-                .removeClass("carousel-item-next carousel-item-left")
-                .addClass("active");
-            }
-          );
-        });
-      });
+      //  
     </script>
   </body>
 </html>
