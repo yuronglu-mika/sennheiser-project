@@ -16,20 +16,49 @@
       rel="stylesheet"
     />
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/animate.min.css"
+      rel="external nofollow"
+    />
     <script src="https://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+
     <style>
       /* div {
-        border: 1px solid red;
-      } */
+              border: 1px solid red;
+            } */
       .hero {
-        height: 800px;
+        height: 790px;
         background-color: #303030;
         position: relative;
+      }
+      .arrow {
+        width: 50px;
+        margin: 15px auto 50px auto;
+        animation: arrow 1s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes arrow {
+        0% {
+          transform: translateY(20px);
+        }
+        50% {
+          transform: translateY(0px);
+        }
+        100% {
+          transform: translateY(20px);
+        }
       }
       .hero-text {
         display: flex;
@@ -38,14 +67,13 @@
       .hero-title {
         position: absolute;
         z-index: 2;
-        top: 70%;
+        top: 72%;
         font-size: 100px;
-        color:#d9af80;
-        font-family: 'Raleway', sans-serif;
+        color: #d9af80;
+        font-family: "Raleway", sans-serif;
       }
       .bg-pic {
         width: 100%;
-        
       }
       .bg-pic img {
         width: 100%;
@@ -73,26 +101,390 @@
         position: absolute;
         z-index: 1;
       }
+
+      /* feature-area */
+
+      .feature-area {
+        padding-right: 0;
+        padding-left: 0;
+        width: 100%;
+        height: 450px;
+        background-color: #cacaca;
+      }
+      .feature-text {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+        padding-top: 50px;
+      }
+      .feature-p-en {
+        color: #303030;
+        font-size: 14px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: lighter;
+        margin: 3px;
+      }
+      .feature-p-ch {
+        color: #303030;
+        font-size: 28px;
+        font-weight: lighter;
+      }
+      .know-us {
+        margin: 0;
+      }
+      .knowus-right {
+        width: 50%;
+        position: relative;
+      }
+      .knowus-left {
+        width: 50%;
+        display: flex;
+        position: relative;
+      }
+      .knowpic1 {
+        width: 320px;
+        height: 200px;
+        right: -160px;
+        position: absolute;
+        margin-top: 20px;
+        z-index: 1;
+      }
+      .knowpic2 {
+        width: 320px;
+        height: 200px;
+        right: 180px;
+        position: absolute;
+        margin-top: 20px;
+      }
+      .knowpic1 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .knowpic2 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .know-box {
+        width: 550px;
+        height: 320px;
+        background-color: #303030;
+        position: absolute;
+        left: 0;
+      }
+      .knowus-right-p {
+        width: 100%;
+        color: #fff;
+        font-size: 14px;
+        font-weight: lighter;
+        padding: 40px 5px 0 35%;
+        line-height: 28px;
+      }
+      .knowus-right-span {
+        color: #d9af80;
+        font-size: 18px;
+      }
+      /* 聲海3大特點 */
+      .threefeatures-area {
+        margin-top: 45px;
+        width: 100%;
+      }
+      .threefeatures {
+        display: flex;
+        justify-content: center;
+      }
+
+      .feature-title {
+        font-size: 18px;
+        text-align: center;
+        margin: 20px;
+      }
+      .feature-description {
+        font-size: 14px;
+        text-align: justify;
+        text-justify: inter-ideograph;
+        line-height: 21px;
+        color: #303030;
+        border: 2px solid #d9af80;
+        /* background-color:#303030; */
+        padding: 10px;
+      }
+      .feature-image {
+        width: 180px;
+        height: 180px;
+        margin: auto;
+        /* padding: 20px; */
+        position: relative;
+        overflow: hidden;
+        transition-duration: 5s; /**动画时间**/
+      }
+      .feature-image:before {
+        content: "";
+        position: absolute;
+        width: 1000px;
+        height: 80px; /**光标的宽度，可根据实际调整**/
+        opacity: 0.1;
+        background-image: linear-gradient(
+          to bottom,
+          transparent,
+          #ffffff,
+          transparent
+        );
+        -webkit-transform: rotate(-30deg);
+        -moz-transform: rotate(-30deg);
+        -ms-transform: rotate(-30deg);
+        -o-transform: rotate(-30deg);
+        transform: rotate(-30deg);
+        -webkit-animation: searchLights 2s ease-in 1s infinite;
+        -o-animation: searchLights 2s ease-in 1s infinite;
+        animation: searchLights 2s ease-in 1s infinite; /**第一个数字参数控制扫光速度，数字越大越慢**/
+      }
+      .feature-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      /* 熱銷商品  */
+      .topsale-area {
+        margin-top: 10px;
+        background-color: #cacaca;
+        padding-top: 10px;
+        padding-bottom: 30px;
+      }
+      .top3-area {
+        height: 450px;
+        position: relative;
+        overflow: hidden;
+      }
+      .top3-wrap {
+        display: flex;
+        position: relative;
+        transition: 0.5s;
+        left: 0;
+      }
+      .topsale {
+        display: flex;
+        flex-shrink: 0;
+        width: 100%;
+        justify-content: space-between;
+      }
+      .topsale-box {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .tsbox {
+        width: 350px;
+        height: 450px;
+        background-color: #303030;
+      }
+      .bestsale-en {
+        color: #303030;
+        font-size: 14px;
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        font-weight: lighter;
+        margin: 3px;
+        text-align: center;
+      }
+      .bestsale-ch {
+        color: #303030;
+        font-size: 28px;
+        font-weight: lighter;
+        text-align: center;
+      }
+      .topsale-right {
+        height: 420px;
+      }
+      .topsale-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .topsale-left {
+        height: 420px;
+      }
+      .topsale-left img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .tsbox-text {
+        font-size: 20px;
+        color: #d9af80;
+        text-align: center;
+        padding-top: 25px;
+      }
+      .tsbox-detail {
+        font-size: 14px;
+        color: #cacaca;
+        text-align: justify;
+        text-justify: inter-ideograph;
+        padding: 30px;
+      }
+      hr {
+        width: 80%;
+        margin: 0 auto;
+        border: 0;
+        height: 2px;
+        background-image: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0),
+          rgba(224, 162, 92, 0.75),
+          rgba(0, 0, 0, 0)
+        );
+      }
+      .a-white-div {
+        text-align: center;
+        margin-top: -25px;
+      }
+      .a-white {
+        background-color: transparent;
+        color: #e3b684;
+        border: 1px solid #e3b684;
+        font-size: 18px;
+        font-weight: lighter;
+        /* border-radius: 20px; */
+        padding: 5px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .a-white:hover {
+        text-decoration: none;
+        background-color: #e3b684;
+        color: #1b1b1b;
+        border: 1px solid #e3b684;
+      }
+
+      /* 75週年 */
+
+      @keyframes searchLights {
+        0% {
+          left: -200px;
+          top: -300px;
+        }
+        100% {
+          left: -160px;
+          top: 800px;
+        }
+      }
+
       @media screen and (max-width: 767px) {
         .hero {
-        height: 270px;
-      }
+          height: 270px;
+        }
         .hero-title {
-        position: absolute;
-        z-index: 2;
-        top: 70%;
-        font-size: 42px;
-        color:#d9af80;
-        font-family: 'Raleway', sans-serif;
-      }
+          position: absolute;
+          z-index: 2;
+          top: 70%;
+          font-size: 42px;
+          color: #d9af80;
+          font-family: "Raleway", sans-serif;
+        }
+        .know-us {
+          width: 100%;
+          margin: 0;
+        }
+        .knowus-left {
+          width: 35%;
+          display: flex;
+          flex-direction: column;
+        }
+        .knowus-right {
+          width: 60%;
+          margin-left: 10px;
+        }
+        .knowpic1 {
+          width: 160px;
+          height: 100px;
+          right: 0px;
+          margin-top: 0px;
+          z-index: 1;
+        }
+        .knowpic2 {
+          width: 160px;
+          height: 100px;
+          right: 0px;
+          margin-top: 110px;
+          z-index: 1;
+        }
+        .knowpic1 img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .knowpic2 img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        .know-box {
+          width: 100%;
+          height: 320px;
+          background-color: #303030;
+          position: absolute;
+          /* left: 0; */
+        }
+        .knowus-right-p {
+          width: 100%;
+          color: #fff;
+          font-size: 14px;
+          font-weight: lighter;
+          padding: 20px 5px 0 10px;
+          line-height: 21px;
+        }
+        .knowus-right-span {
+          color: #d9af80;
+          font-size: 18px;
+        }
+
+        .topsale-area {
+          margin-top: 5px;
+        }
+        .topsale-box {
+          width: 33%;
+        }
+        .tsbox {
+          width: 100%;
+          height: 200px;
+        }
+        .topsale-right {
+          width: 33%;
+          height: 200px;
+        }
+        .topsale-right img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+        .topsale-left {
+          width: 33%;
+          height: 200px;
+        }
+        .topsale-left img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
       }
     </style>
   </head>
 
   <body>
+    <!-- 輪播牆 -->
+
     <div class="container-fluid hero">
       <div class="hero-text">
-        <h1 class="hero-title animate__animated animate__zoomIn">This is Your Crew</h1>
+        <h1 class="hero-title animate__animated animate__zoomIn">
+          This is Your Crew
+        </h1>
       </div>
 
       <div class="row model-pic">
@@ -102,7 +494,6 @@
       </div>
 
       <div class="row hero-area">
-
         <div
           id="carouselExampleControls"
           class="carousel-slide slide"
@@ -154,8 +545,211 @@
         <div class="bg-pic">
           <img src="images/1_index/01.png" alt="" />
         </div>
+
+        <div class="arrow">
+          <a href="#box-title"
+            ><img src="images/1_index/icon desing/arrow.svg" alt=""
+          /></a>
+        </div>
       </div>
     </div>
+    <!-- 你不能不認識的聲海 -->
+    <div class="container-fluid feature-area">
+      <div class="row feature-text">
+        <p class="feature-p-en">Sennheiser</p>
+        <p class="feature-p-ch">你不能不認識的聲海</p>
+      </div>
+
+      <div class="row know-us">
+        <div class="knowus-left">
+          <div class="knowpic1">
+            <img src="images/1_index/05.jpg" alt="" />
+          </div>
+          <div class="knowpic2">
+            <img src="images/1_index/06.jpg" alt="" />
+          </div>
+        </div>
+
+        <div class="knowus-right">
+          <div class="know-box">
+            <p class="knowus-right-p">
+              我們現在打造的，是
+              <span class="knowus-right-span">音響世界的未來 </span>– <br />
+              這就是我們每天堅持不懈的追求。<br />
+              這個信念表達了我們公司上下的共同追求和理想。<br />
+              因為我們被悠久的歷史、<br />力求創新的文化和追求卓越的激情所推動著。<br /><br />
+              對於我們來說，單有好聲音並不足夠。<br />
+              我們要的是展現出完美的聲音、為聲音賦予生命。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 聲海3大特點 -->
+    <div class="container threefeatures-area">
+      <div class="row threefeatures">
+        <div class="col-sm-12 col-lg-4">
+          <div class="feature-image">
+            <img
+              src="images/1_index/icon desing/icon/德國工藝icon-黑.svg"
+              alt=""
+            />
+          </div>
+
+          <p class="feature-title">精美的德國工藝設計</p>
+          <p class="feature-description">
+            產品品質獨步全球，兼顧品質、安全、舒適、耐用四大特性。
+            精緻金屬工藝搭配極簡風格的設計則滿足消費者對於3C配件時尚的造型需求。
+          </p>
+        </div>
+
+        <div class="col-sm-12 col-lg-4">
+          <div class="feature-image">
+            <img src="images/1_index/icon desing/icon/2年保固-黑.svg" alt="" />
+          </div>
+          <p class="feature-title">全系列保固二年</p>
+          <p class="feature-description">
+            Sennheiser
+            森海塞爾全系列耳機、擴大機，享有原廠保固二年之服務，並且過保後可享有付費維修之服務。
+            讓您買的安心用的放心享受聆聽的新聲活。
+          </p>
+        </div>
+        <div class="col-sm-12 col-lg-4">
+          <div class="feature-image">
+            <img src="images/1_index/icon desing/icon/出色音質-黑.svg" alt="" />
+          </div>
+
+          <p class="feature-title">均衡精確的音頻重現</p>
+          <p class="feature-description">
+            德系原音均衡精確重現，彷彿每個音頻的位置深淺都經過來回計算精心刻畫般地精準。
+            毫不妥協的音質，反映了Sennheiser 對於完美產品的執著和追求。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 熱銷商品 -->
+    <div class="container-fluid topsale-area">
+      <div class="arrow">
+        <a href="#box-title"
+          ><img src="images/1_index/icon desing/arrow.svg" alt=""
+        /></a>
+      </div>
+
+      <p class="bestsale-en">2020 best-seller</p>
+      <p class="bestsale-ch">人氣耳機-TOP 3</p>
+
+      <div class="top3-area">
+        <div class="top3-wrap">
+          <div class="topsale">
+            <div
+              class="col-lg-4 topsale-left wow slideInLeft"
+              data-wow-duration="1s"
+              data-wow-delay="1s"
+            >
+              <img class="pl-5" src="images/1_index/hot sale/left.png" alt="" />
+            </div>
+
+            <div class="col-lg-4 topsale-right wow slideInDown">
+              <img
+                class="pr-5"
+                src="images/1_index/hot sale/right.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="topsale">
+            <div
+              class="col-lg-4 topsale-left"
+              data-wow-duration="1s"
+              data-wow-delay="1s"
+            >
+              <img
+                class="pl-5"
+                src="images/1_index/hot sale/left02.png"
+                alt=""
+              />
+            </div>
+
+            <div class="col-lg-4 topsale-right">
+              <img
+                class="pr-5"
+                src="images/1_index/hot sale/right02.png"
+                alt=""
+              />
+            </div>
+          </div>
+          <div class="topsale">
+            <div
+              class="col-lg-4 topsale-left"
+              data-wow-duration="1s"
+              data-wow-delay="1s"
+            >
+              <img
+                class="pl-5"
+                src="images/1_index/hot sale/left03.png"
+                alt=""
+              />
+            </div>
+
+            <div class="col-lg-4 topsale-right">
+              <img
+                class="pr-5"
+                src="images/1_index/hot sale/right03.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 topsale-box">
+          <div class="tsbox">
+            <p class="tsbox-text">HD 450BT 無線藍牙降噪耳機</p>
+            <hr />
+            <p class="tsbox-detail">
+              全新的 HD 450BT.
+              造就絕佳的無線音色表現。這款耳機提供主動降噪功能、高品質的無線編解碼器支援
+              AAC、aptX™ Low Latency 低延遲和藍牙
+              5.0，可為您帶來優質的音色和深沉的低音。語音助理、Sennheiser Smart
+              Control app應用程式和 30
+              小時的電池續航力等，保證音樂愛好者擁有好音質又兼具多功能性。
+              <br /><br />
+              現代簡約風格，兩色可選。可折疊式方便攜帶。還有提供個性化聆聽，無論是調節低音效果，
+              或是實現自然的聲音，都可以依據各型喜好設定，因此深受大眾喜愛。
+            </p>
+
+            <div class="a-white-div">
+              <a href="" class="a-white">查看商品</a>
+            </div>
+          </div>
+        </div>
+
+        <a
+          id="top3PrevBtn"
+          class="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+          style="width: 5%"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          id="top3NextBtn"
+          class="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+          style="width: 5%"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 75週年 -->
 
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -172,6 +766,141 @@
       integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
       crossorigin="anonymous"
     ></script>
-    <script></script>
+
+    <script>
+      new WOW().init();
+    </script>
+
+    <script>
+      console.log($(".topsale").outerWidth(true));
+      let page = 0;
+      $("#top3NextBtn").on("click", function (event) {
+        event.preventDefault();
+        if (page < 2) {
+          page++;
+          $(".top3-wrap").css("left", $(".topsale").outerWidth(true) * -page);
+
+          switch (page) {
+            case 0:
+              $(".tsbox-text").text("HD 450BT 無線藍牙降噪耳機");
+              $(".tsbox-detail").html(`全新的 HD 450BT.
+              造就絕佳的無線音色表現。這款耳機提供主動降噪功能、高品質的無線編解碼器支援
+              AAC、aptX™ Low Latency 低延遲和藍牙
+              5.0，可為您帶來優質的音色和深沉的低音。語音助理、Sennheiser Smart
+              Control app應用程式和 30
+              小時的電池續航力等，保證音樂愛好者擁有好音質又兼具多功能性。
+              <br /><br />
+              現代簡約風格，兩色可選。可折疊式方便攜帶。還有提供個性化聆聽，無論是調節低音效果，
+              或是實現自然的聲音，都可以依據各型喜好設定，因此深受大眾喜愛。`);
+              break;
+            case 1:
+              $(".tsbox-text").html(`CX 400BT 真無線藍牙耳機`);
+              $(".tsbox-detail").html(
+                `變革，才是定律。Sennheiser全新推出的CX 400BT True Wireless顛覆無線耳機的常規，以高性能音頻技術帶來令人引頸期盼的全新耳機。控制功能可供隨意自訂，簡單易用，舒適感覺了無間斷，7小時的電池壽命更可透過隨附的隨身充電盒延續至長達20小時，是音樂愛好者必然的理想之選。<br /><br />繼今年初推出後即好評如潮的MOMENTUM True Wireless 2耳機後，CX 400BT True Wireless亦搭載Sennheiser的7毫米單體，營造卓越不凡的聲效。`
+              );
+              break;
+
+            case 2:
+              $(".tsbox-text").html(`CX SPORT 經典運動藍牙款`);
+              $(".tsbox-detail").html(
+                `CX SPORT結合了當家的CX系列及運動元素，打造出專為運動而生的全新產品，透過Sennheiser多年設計運動耳機的經驗，優異的人體工學設計，提供出色的佩戴舒適度，而且牢固不脫落；同時藉由CX系列耳機的優異發聲單體，釋放出均衡宜人的出色音質。<br /><br />在快樂運動過程中使用超輕巧、防水防汗設計的 Sennheiser CX SPORT入耳式無線耳機。其耳機線可以採用頸前或頸後環繞兩種方式進行佩戴，先進的藍牙技術確保了它能夠在運動中讓您自由自在的體驗高品質的聲音。`
+              );
+              break;
+
+            default:
+              break;
+          }
+        }
+      });
+
+      $("#top3PrevBtn").on("click", function (event) {
+        event.preventDefault();
+        if (page > 0) {
+          page--;
+          $(".top3-wrap").css("left", $(".topsale").outerWidth(true) * -page);
+
+          switch (page) {
+            case 0:
+              $(".tsbox-text").text("HD 450BT 無線藍牙降噪耳機");
+              $(".tsbox-detail").html(`全新的 HD 450BT.
+              造就絕佳的無線音色表現。這款耳機提供主動降噪功能、高品質的無線編解碼器支援
+              AAC、aptX™ Low Latency 低延遲和藍牙
+              5.0，可為您帶來優質的音色和深沉的低音。語音助理、Sennheiser Smart
+              Control app應用程式和 30
+              小時的電池續航力等，保證音樂愛好者擁有好音質又兼具多功能性。
+              <br /><br />
+              現代簡約風格，兩色可選。可折疊式方便攜帶。還有提供個性化聆聽，無論是調節低音效果，
+              或是實現自然的聲音，都可以依據各型喜好設定，因此深受大眾喜愛。`);
+              break;
+            case 1:
+              $(".tsbox-text").text("CX 400BT 真無線藍牙耳機");
+              $(".tsbox-detail").html(
+                `變革，才是定律。Sennheiser全新推出的CX 400BT True Wireless顛覆無線耳機的常規，以高性能音頻技術帶來令人引頸期盼的全新耳機。控制功能可供隨意自訂，簡單易用，舒適感覺了無間斷，7小時的電池壽命更可透過隨附的隨身充電盒延續至長達20小時，是音樂愛好者必然的理想之選。<br /><br />繼今年初推出後即好評如潮的MOMENTUM True Wireless 2耳機後，CX 400BT True Wireless亦搭載Sennheiser的7毫米單體，營造卓越不凡的聲效。`
+              );
+              break;
+
+            case 2:
+              $(".tsbox-text").html(`CX SPORT 經典運動藍牙款`);
+              $(".tsbox-detail").html(
+                `CX SPORT結合了當家的CX系列及運動元素，打造出專為運動而生的全新產品，透過Sennheiser多年設計運動耳機的經驗，優異的人體工學設計，提供出色的佩戴舒適度，而且牢固不脫落；同時藉由CX系列耳機的優異發聲單體，釋放出均衡宜人的出色音質。<br /><br />在快樂運動過程中使用超輕巧、防水防汗設計的 Sennheiser CX SPORT入耳式無線耳機。其耳機線可以採用頸前或頸後環繞兩種方式進行佩戴，先進的藍牙技術確保了它能夠在運動中讓您自由自在的體驗高品質的聲音。`
+              );
+              break;
+
+            default:
+              break;
+          }
+        }
+      });
+
+      $(".carousel-control-prev").on("click", function () {
+        console.log("hi");
+        $(".carousel-item").each(function (index) {
+          if ($(this).hasClass("active")) {
+            $(this).addClass("carousel-item-right");
+            $(".carousel-item")
+              .eq(index - 1)
+              .addClass("carousel-item-prev carousel-item-right");
+
+            // $(this).removeClass("carousel-item-right");
+          }
+
+          $(this).one(
+            "transitionend webkitTransitionEnd oTransitionEnd",
+            function () {
+              $(this).removeClass("carousel-item-right").removeClass("active");
+              $(".carousel-item")
+                .eq(index - 1)
+                .removeClass("carousel-item-prev carousel-item-right")
+                .addClass("active");
+            }
+          );
+        });
+      });
+
+      $(".carousel-control-next").on("click", function () {
+        console.log("hi next");
+        $(".carousel-item").each(function (index) {
+          if ($(this).hasClass("active")) {
+            $(this).addClass("carousel-item-left");
+            $(".carousel-item")
+              .eq(index + 1)
+              .addClass("carousel-item-next carousel-item-left");
+
+            // $(this).removeClass("carousel-item-right");
+          }
+
+          $(this).one(
+            "transitionend webkitTransitionEnd oTransitionEnd",
+            function () {
+              $(this).removeClass("carousel-item-left").removeClass("active");
+              $(".carousel-item")
+                .eq(index + 1)
+                .removeClass("carousel-item-next carousel-item-left")
+                .addClass("active");
+            }
+          );
+        });
+      });
+    </script>
   </body>
 </html>
